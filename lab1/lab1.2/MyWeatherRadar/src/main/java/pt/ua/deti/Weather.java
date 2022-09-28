@@ -16,9 +16,21 @@ public class Weather
 {
     //private static final int CITY_ID_AVEIRO = 1010500;
 
-    private static int code = 1010500;
+    private int code; //codigo da cidade
 
     public static void main( String[] args ) {
+
+        int code; //codigo da cidade
+
+        //to receive the city code as a parameter in the command line and print the forecast information
+
+        if(args.length > 0){
+
+            code = Integer.parseInt(args[0]);
+        } else{
+            code = 1010500;
+            System.out.print("O utilizador nao introduziu codigo fica o de Aveiro");
+        }
 
         // get a retrofit instance, loaded with the GSon lib to convert JSON into objects
         Retrofit retrofit = new Retrofit.Builder()
@@ -29,28 +41,19 @@ public class Weather
         // create a typed interface to use the remote API (a client)
         IpmaService service = retrofit.create(IpmaService.class);
         // prepare the call to remote endpoint
-        //Call<IpmaCityForecast> callSync = service.getForecastForACity(CITY_ID_AVEIRO);
-
-        //to receive the city code as a parameter in the command line and print the forecast information
-
-        if(args.length > 0){
-
-            code = Integer.parseInt(args[0]);
-        }
+        Call<IpmaCityForecast> callSync = service.getForecastForACity(code);
 
         try {
             Response<IpmaCityForecast> apiResponse = callSync.execute();
             IpmaCityForecast forecast = apiResponse.body();
 
             if (forecast != null) {
-                CityForecast firstDay = forecast.getData().listIterator().next();
+                //CityForecast firstDay = forecast.getData().listIterator().next();
+                System.out.println("max tem for today is:" + forecast.getData().listIterator().next().getTMax() + "\nmin tem for today is:" + forecast.getData().listIterator().next().getTMin() + "\nlatitude: " + forecast.getData().listIterator().next().getLatitude() + "\nlongitude" + forecast.getData().listIterator().next().getLongitude() +"\n" + code);
 
-                System.out.println("Latitude: " + forecast.getData().listIterator().next().getLatitude()+ "\nLongitude" + forecast.getData().listIterator().next().getLongitude()
-                        + "\nmax temp for today: " + forecast.getData().listIterator().next().getTMax() + "Cº ," + "\nprobabilidade de precipitação: " +forecast.getData().listIterator().next().getPrecipitaProb() +"\n" + code);
-
-                System.out.printf( "max temp for %s is %4.1f %n",
-                        firstDay.getForecastDate(),
-                        Double.parseDouble(firstDay.getTMax()));
+                //System.out.printf( "max temp for %s is %4.1f %n",
+                        //firstDay.getForecastDate(),
+                        //Double.parseDouble(firstDay.getTMax()));
             } else {
                 System.out.println( "No results for this request!");
             }
