@@ -31,7 +31,7 @@ public class Weather
             code = 1010500;
             System.out.print("O utilizador nao introduziu codigo fica o de Aveiro");
         }
-
+    //
         // get a retrofit instance, loaded with the GSon lib to convert JSON into objects
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://api.ipma.pt/open-data/")
