@@ -23,7 +23,7 @@ public class Weather
         int code; //codigo da cidade
 
         //to receive the city code as a parameter in the command line and print the forecast information
-
+//
         if(args.length > 0){
 
             code = Integer.parseInt(args[0]);
