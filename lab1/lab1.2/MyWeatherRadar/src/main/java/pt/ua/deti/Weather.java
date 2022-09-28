@@ -31,7 +31,7 @@ public class Weather
             code = 1010500;
             System.out.print("O utilizador nao introduziu codigo fica o de Aveiro");
         }
-
+        //
         // get a retrofit instance, loaded with the GSon lib to convert JSON into objects
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://api.ipma.pt/open-data/")
@@ -52,8 +52,8 @@ public class Weather
                 System.out.println("max tem for today is:" + forecast.getData().listIterator().next().getTMax() + "\nmin tem for today is:" + forecast.getData().listIterator().next().getTMin() + "\nlatitude: " + forecast.getData().listIterator().next().getLatitude() + "\nlongitude" + forecast.getData().listIterator().next().getLongitude() +"\n" + code);
 
                 //System.out.printf( "max temp for %s is %4.1f %n",
-                        //firstDay.getForecastDate(),
-                        //Double.parseDouble(firstDay.getTMax()));
+                //firstDay.getForecastDate(),
+                //Double.parseDouble(firstDay.getTMax()));
             } else {
                 System.out.println( "No results for this request!");
             }
