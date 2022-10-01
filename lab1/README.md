@@ -35,10 +35,64 @@ A Project Object Model or POM is the fundamental unit of work in Maven. It is an
 
 Check the content of the POM.xml and the folder structure that was created.Change/add some additional properties in your project, such as the development team, character encodingor the Java versionto useby the compiler.E.g.:
 
+```
 <properties>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
 </properties>
+```
+
+We can also add dependencies in POM.xml, like retrofit, Gson and converter-gson.
+
+```
+<dependency>
+      <groupId>com.squareup.retrofit2</groupId>
+      <artifactId>retrofit</artifactId>
+      <version>2.9.0</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.squareup.retrofit2</groupId>
+      <artifactId>converter-gson</artifactId>
+      <version>2.9.0</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.9.1</version>
+    </dependency>
+  </dependencies>
+  ```
+  In POM, we declare direct dependencies; these artifacts will usually require other dependencies, forming a graph of project dependencies. For example, Retrofit will requireOkHTTP.
+  
+  ```
+ import retrofit2.Call;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+```
+  
+  ```
+  Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://api.ipma.pt/open-data/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+```
+
+## Compile and run the project:
+
+```$ mvn package```
+```$ mvn exec:java-Dexec.mainClass="pt.ua.deti.Weather"```
+
+Change the implementation to receive the city code as a parameter
+
+``` mvn exec:java -Dexec.mainClass="pt.ua.deti.Weather" -Dexec.args="1010500"```
+
+# 1.3 Source code management using Git
+
+
+  
 
 
 
