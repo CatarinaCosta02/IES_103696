@@ -1,6 +1,6 @@
 # IES_103696
 
-# 1.1 Basic setupfor Java development 
+# 1.1 Basic setupfor Java development  
 
 The recommended Java version was  OpenJDK17LTS, but i used ```javac --version ```  result: javac 11.0.16
 Test the Maven installation: ```mvn  --version ``` result: Apache Maven 3.6.3 Java version: 11.0.16
