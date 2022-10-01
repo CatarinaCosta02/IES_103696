@@ -35,10 +35,12 @@ A Project Object Model or POM is the fundamental unit of work in Maven. It is an
 
 Check the content of the POM.xml and the folder structure that was created.Change/add some additional properties in your project, such as the development team, character encodingor the Java versionto useby the compiler.E.g.:
 
-```<properties>
+<properties>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
-</properties>```
+</properties>
+
+
 
 
 
