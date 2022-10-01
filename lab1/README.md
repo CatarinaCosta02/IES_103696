@@ -98,12 +98,12 @@ Add a .gitignore: https://gist.github.com/icoPT/31b343c987cb45ba0cde2bbee8cbd7ea
 
 Import your projectinto the Git versioncontrol and synchronizewith to the cloud:
 
-``` $ cd project_folder ```
-```$ git init```
-```$ git remote add origin <REMOTE_URL>```
-```$ git add.```
-```$ git commit -m "Initial project setup for exercise 1_3"```
-```$ git push -u origin main```
+1)``` $ cd project_folder ```
+2)```$ git init```
+3)```$ git remote add origin <REMOTE_URL>```
+4)```$ git add.```
+5)```$ git commit -m "Initial project setup for exercise 1_3"```
+6)```$ git push -u origin main```
 
 Let’s simulatethe existenceof multiple contributors to the project.Let’s call the main IES root as“location1” and another auxiliar folder as “location2” (should be a temporary space, outsider the main root of IES).
 Clone your (remote) repositoryinto location2.
