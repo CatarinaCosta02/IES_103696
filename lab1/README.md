@@ -17,6 +17,31 @@ The regular “build” of a (large) project takesseveral steps, such as obtaini
 
 Create a Maven project: ``` mvn archetype:generate -DgroupId=com.pt.ua.deti.app -DartifactId=MyWeatherRadar -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false```
 
+## API request:
+
+### Whats an API request?
+
+ An API call, or API request, is a message sent to a server asking an API to provide a service or information.
+
+Start by analyzingthe struct of the API requests and the replies (e.g.: check the 5-days aggregateforecastfor a location).You may use any HTTP client, such as the browseror the curlutility. For example, to get a 5-day forecast for Aveiro(which has the internal id=1010500)
+
+```$ curl http://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1010500.json|json_pp```
+
+## POM.xml:
+
+### What's POM.xml?
+
+A Project Object Model or POM is the fundamental unit of work in Maven. It is an XML file that contains information about the project and configuration details used by Maven to build the project. It contains default values for most projects.
+
+Check the content of the POM.xml and the folder structure that was created.Change/add some additional properties in your project, such as the development team, character encodingor the Java versionto useby the compiler.E.g.:
+
+```<properties>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+</properties>```
+
+
+
 # Review Questions
 
 ## A)Maven has three lifecycles: clean, site and default. Explain the main phases in the default lifecycle.
