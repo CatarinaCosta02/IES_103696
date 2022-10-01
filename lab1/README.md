@@ -1,5 +1,22 @@
 # IES_103696
 
+# 1.1 Basic setupfor Java development
+
+The recommended Java version was  OpenJDK17LTS, but i used ```javac --version ```  result: javac 11.0.16
+Test the Maven installation: ```mvn  --version ``` result: Apache Maven 3.6.3 Java version: 11.0.16
+Setting up Git: ```git --version```
+                ```git config --list```
+The use of graphical Gitclients is optional (e.g.:  SourceTree,GitKraken).In addition, IDEs have built-in support for git commands
+
+# 1.2 Build management with the Maven tool
+
+## What is Maven?
+
+Maven is a popular open-source build tool developed by the Apache Group to build, publish, and deploy several projects at once for better project management. The tool provides allows developers to build and document the lifecycle framework. 
+The regular “build” of a (large) project takesseveral steps, such as obtaining dependencies (required external components/libraries), compiling source code, packagingartifacts, updating documentation, installing on the server, etc.
+
+Create a Maven project: ``` mvn archetype:generate -DgroupId=com.pt.ua.deti.app -DartifactId=MyWeatherRadar -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false```
+
 # Review Questions
 
 ## A)Maven has three lifecycles: clean, site and default. Explain the main phases in the default lifecycle.
