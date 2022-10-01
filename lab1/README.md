@@ -3,9 +3,12 @@
 # 1.1 Basic setupfor Java development    
 
 The recommended Java version was  OpenJDK17LTS, but i used ```javac --version ```  result: javac 11.0.16
+
 Test the Maven installation: ```mvn  --version ``` result: Apache Maven 3.6.3 Java version: 11.0.16
+
 Setting up Git: ```git --version```
                 ```git config --list```
+                
 The use of graphical Gitclients is optional (e.g.:  SourceTree,GitKraken).In addition, IDEs have built-in support for git commands
 
 # 1.2 Build management with the Maven tool
@@ -204,10 +207,10 @@ It's important to know that when executing a specific phase (```mvn <phase>```) 
 Build tools are the tools or programs that help create an executable application from the source code. As the name suggests, it’s essential for building or scripting a wide variety of tasks. With that, build tools such as Maven, are good for helping to download dependencies, which refers to the libraries or JAR files,updating documentation,compiling source code,installing the packaged code in the local repository, server, or central repository,etc.
 
 Maven has also a lot of advantages, like:
->Simplifies the process of project building;
->Increases the performance of the project and the building process;
->In Maven, it’s easy to add new dependencies by writing the dependency code in the pom file;
->Provides easy access to all the required information.
+>*Simplifies the process of project building;
+>*Increases the performance of the project and the building process;
+>*In Maven, it’s easy to add new dependencies by writing the dependency code in the pom file;
+>*Provides easy access to all the required information.
 
 Maven is a project management tool, that focuses on the simplification and standardization of the building process, taking care of the following:
 
