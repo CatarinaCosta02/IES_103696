@@ -118,7 +118,7 @@ Using “location2” as your current working directory, add a new feature;speci
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>
       <version>2.6.1</version>
-    </dependency> 
+    </dependency>  
 ```
 
 Once you are satisfied with the implementation, be sure to commit the changes into to the main line (remote repository) and then synchronize your project at the initial “location1”.
