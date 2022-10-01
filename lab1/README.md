@@ -91,6 +91,86 @@ Change the implementation to receive the city code as a parameter
 
 # 1.3 Source code management using Git
 
+Add a .gitignore: https://gist.github.com/icoPT/31b343c987cb45ba0cde2bbee8cbd7ea
+
+Import your projectinto the Git versioncontrol and synchronizewith to the cloud:
+
+``` $ cd project_folder ```
+```$ git init```
+```$ git remote add origin <REMOTE_URL>```
+```$ git add.```
+```$ git commit -m "Initial project setup for exercise 1_3"```
+```$ git push -u origin main```
+
+Let’s simulatethe existenceof multiple contributors to the project.Let’s call the main IES root as“location1” and another auxiliar folder as “location2” (should be a temporary space, outsider the main root of IES).
+Clone your (remote) repositoryinto location2.
+
+Using “location2” as your current working directory, add a new feature;specifically, create a log for your application, i.e.,the application should write a logtracking the operations that are executed, as well as any problems that have occurred.
+
+```
+<dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>2.6.1</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>2.6.1</version>
+    </dependency> 
+```
+
+Once you are satisfied with the implementation, be sure to commit the changes into to the main line (remote repository) and then synchronize your project at the initial “location1”.
+Have a look at your repository history: ```$ git log --reverse --oneline```
+
+# 1.4 Introductionto Docker 
+
+Clone a repository in a container: ```docker run --name repo alpine/git clone \ url docker cp repo:/git/getting-started/```
+
+Build a image: ```cd getting-started docker build -t docker101tutorial ```
+
+Orientation and Setup:
+
+``` $  docker run -d -p 80:80 docker/getting-started```
+
+## What's a container?
+
+A container is a sandboxed process on your machine that is isolated from all other processes on the host machine. 
+
+Install the Portainer CE server appusing the “Docker” deployment option.
+
+```docker volume create portainer_data``` -> create the volume that Portainer Server will use to store its database
+
+```docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest``` ->  download and install the Portainer Server container
+
+```docker ps``` -> You can check to see whether the Portainer Server container has started by running 
+
+you can log into your Portainer Server instance by opening a web browser and going to: https://localhost:9443
+
+### Define your own image (Dockerfile):
+
+### Dockerfile:
+A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image.
+
+### Docker container image:
+A lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
+
+ Run PostgresSQL using a pre-made image: ```docker run --rm --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres```
+ 
+ Connect to PSQL server: https://dev.to/shree_j/how-to-install-and-run-psql-using-docker-41j2
+ 
+ After all the steps, manage your postgres from the browser by launching: http://localhost:5050
+ ```docker run --rm -p 5050:5050 thajeztah/pgadmin4```
+ 
+### Multiple services (Docker compose):
+
+https://docs.docker.com/compose/gettingstarted/ You will use a “composition” of two containers (Flask service, depending in Redis).
+
+# 1.5 Wrapping-up& integrating concepts
+
+
+
 
   
 
