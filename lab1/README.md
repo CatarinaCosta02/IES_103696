@@ -21,7 +21,7 @@ Create a Maven project: ``` mvn archetype:generate -DgroupId=com.pt.ua.deti.app 
 
 ### Whats an API request?
 
- An API call, or API request, is a message sent to a server asking an API to provide a service or information.
+An API call, or API request, is a message sent to a server asking an API to provide a service or information.
 
 Start by analyzingthe struct of the API requests and the replies (e.g.: check the 5-days aggregateforecastfor a location).You may use any HTTP client, such as the browseror the curlutility. For example, to get a 5-day forecast for Aveiro(which has the internal id=1010500)
 
@@ -67,13 +67,13 @@ We can also add dependencies in POM.xml, like retrofit, Gson and converter-gson.
   In POM, we declare direct dependencies; these artifacts will usually require other dependencies, forming a graph of project dependencies. For example, Retrofit will requireOkHTTP.
   
   ```
- import retrofit2.Call;
+import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 ```
   
-  ```
+```
   Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://api.ipma.pt/open-data/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -169,14 +169,13 @@ https://docs.docker.com/compose/gettingstarted/ You will use a “composition”
 
 # 1.5 Wrapping-up& integrating concepts
 
+This exercise is composed by two small, idependent projects: IpmaApiClient and WeatherForecastByCity
 
+In the IpmaApiClient was executed the command ``` mvn install``` 
 
+In the WeatherForecastByCity was executed the command ``` mvn package```
 
-  
-
-
-
-
+Unfortunately in this exercise I had some issues, so i could't complete it in the best way possible.
 
 # Review Questions
 
@@ -255,6 +254,6 @@ Example of a good commit message:
 
 Docker, by default, already prepares the required volume space for the starting container. Because volumes are the preferd mechanism for persisting data generated and used by Docker containers, while bind mounts are dependent on the directory structure and OS of the host machine, volumes are completely managed by Docker.
 
-In addition, volumes are often a better choice than persisting data in a container’s writable layer, because a volume does not increase the size of the containers using it, and the volume’s contents exist outside the lifecycle of a given container. You can create a volume explicitly using the docker volume create command, or Docker can create a volume during container or service creation.
+In addition, volumes are often a better choice than persisting data in a container’s writable layer, because a volume does not increase the size of the containers using it, and the volume’s contents exist outside the lifecycle of a given container.
 
 However, we must take an extra step configuring the volumes for a (production) database, because the volumes size can grow exponentially and, even when no running container is using a volume, that same volume is still available to Docker and is not removed automatically.
