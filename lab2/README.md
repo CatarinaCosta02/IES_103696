@@ -43,6 +43,10 @@ If it is listed in the Manager app, then it is a success.
 In older versions of the Servlet Container specifications, the developer neededto write a web.xmlfile with the configuration descriptors, including the mapping of Servlet classes and URL paths.
 
 This was the last step of the 2.1 exercise, and it was successesfull
+  
+ ## 2.2 Server-side programming with embedded servers
+
+Run the web container from within your app. In this case, you will be using an “embedded server”, since its lifecycle (start, stop) and the deployment of the artifactsis controlled by your application code. 
 
 # REVIEW QUESTIONS
 
