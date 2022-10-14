@@ -1,3 +1,49 @@
+# Lab 2-Java at the server-sideand the role of application containers
+
+## 2.1 Server-side programming with servlets
+
+A Servlet is a Java class that runs at the server, handles (client) requests, processes them,and reply with a response.A servlet must be deployed intoa (multithreaded) Servlet Containerto be usable.
+
+### a) Prepare an application server to run your web projects:
+
+Download Tomcat 9.0.68 Released zip and run the command ```./startup.sh``` 
+
+Then try access the default page in the browser: http://localhost:8080
+
+### b) The Tomcat installation includes a management environment (“Manager app”) you can use to control the server, including deploying and un-deploying applications you develop
+
+Include the Manager app, and register at least one role in conf/tomcat-users.xml:
+
+```<rolerolename="manager-gui"/>```
+
+```<rolerolename="manager-script"/>```
+
+```<userusername="admin" password="admin"roles="manager-gui,manager-script"/>```
+
+Enter the http://localhost:8080/manager
+
+### c) Create a maven-based web application
+
+We used a Maven Central catalog, after we created the project, we run the ``` mvn install``` command. Then it is created a .war file, where the application is packed as a Web Archive.
+
+### e) Deploy the packed application (.war) into the application server.
+
+To deploy the packed application, we have 2 ways of doing it:
+
+->  http://localhost:8080/manager
+
+-> copy the .war file into <Tomcat root>/webapps
+
+### f) Confirm that your application was successfully deployer in Tomcat:
+
+If it is listed in the Manager app, then it is a success.
+
+### h) Add a basic servletto your project that takes the name of the user, passed as a parameter in the HTTP request and prints a customized message.
+
+In older versions of the Servlet Container specifications, the developer neededto write a web.xmlfile with the configuration descriptors, including the mapping of Servlet classes and URL paths.
+
+This was the last step of the 2.1 exercise, and it was successesfull
+
 # REVIEW QUESTIONS
 
 ## A) What are the responsibilities/services of a “servlet container”?
