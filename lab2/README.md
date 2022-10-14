@@ -48,6 +48,12 @@ This was the last step of the 2.1 exercise, and it was successesfull
 
 Run the web container from within your app. In this case, you will be using an “embedded server”, since its lifecycle (start, stop) and the deployment of the artifactsis controlled by your application code. 
 
+  ## 2.3 Introduction to web apps with a full-featured framework (Spring Boot)
+
+Spring Bootis a rapid application development platform built on top of the popular Spring Framework. SpringBoot is a convention-over-configuration addition to the Spring platform,useful to get started with minimum effort and create stand-alone, production-grade applications.
+
+### a) Use the Spring Initializr4to create a new (maven-supported, Spring Boot)project for your web app.
+
 # REVIEW QUESTIONS
 
 ## A) What are the responsibilities/services of a “servlet container”?
