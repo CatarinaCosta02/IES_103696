@@ -1,3 +1,29 @@
+# Lab 3 Multi-layer web applications with Spring Boot
+
+# 3.1 Accessing databases in SpringBoot
+
+## b) Walkthrough the available solution and answers these questions:
+
+### \- The “UserController” class gets an instance of “userRepository” through its constructor; how is this new repository instantiated?
+
+The new repository is instantiated by the @Autowired annotation to the UserController constructor.
+
+### \- List the methods invoked in the “userRepository” object by the “UserController”. Where are these methods defined?
+
+findAll(); findById(Long id); delete(User user); save(User user); This methods are defined in the CrudRepository interface.
+
+### \- Where is the data being saved?
+
+The data is being saved in the H2 database.
+
+Small defenition : **H2** is an **embedded, open-source,** and **in-memory** database. It is a relational database management system written in [Java](https://www.javatpoint.com/java-tutorial). It is a **client/server** application. It is generally used in **unit testing**. It stores data in memory, not persist the data on disk.
+
+### \- Where is the rule for the “not empty” email address defined?
+
+ It is defined in the User class, with a @NotBlank annotation.
+
+Small Definititon: The @NotBlank annotation uses the NotBlankValidator class, which **checks that a character sequence's trimmed length is not empty**
+
 # Review questions
 
 ## A) Explain the differences between the RestController and Controller components used in different parts of this lab.
