@@ -114,7 +114,8 @@ RestController is used for making restful web services with the help of  the @Re
 
 Describe the role of the elements modeled in the diagram.
 
-![Diagram](https://user-images.githubusercontent.com/101096418/198854838-4fb2406b-21c0-4e52-a52f-b2177a580359.png)
+![Diagram(1)](https://user-images.githubusercontent.com/101096418/198855241-0abc5dc1-70d5-4bfe-9c7f-a3d257efdbd5.png)
+
 
 ### Entity:
 
