@@ -72,6 +72,32 @@ After all that, we test the REST API'S via Postman Client, trying the POST, GET 
 
 In this exercise folder there are some pictures of the results given by those methods.
 
+# 3.3 Wrapping-up and integrating concepts
+
+## a) Work with a persistent database of quotes4.
+
+To complete this exercise, we adapted the exercise 4 from de lab2 and used the https://www.sourcecodeexamples.net/2021/08/spring-boot-project-with-controller.html to come closer to the privious exercise.
+
+## b)Separate the “boundary” of the problem (@RestController) from the repository, by addingan intermediary @Service component, like in this example. The RestController provides the wiring for HTTP but requires the Service to answer all requests; the Service holds the business logic and interacts with the Repository(or other components) as needed.
+
+### Notes:
+
+@Table(name = "..."): associates an entity with a table
+
+@ManyToOne(...): indicates a 1-to-many relationship
+
+### API layer:
+
+Presents the application's features and data to the users
+
+### Bussiness Layer:
+
+Contains the business logic that drives the application's functionalities.
+
+### Presistence Logic:
+
+This layer interacts with the database so can save and restore the application data
+
 # Review questions
 
 ## A) Explain the differences between the RestController and Controller components used in different parts of this lab.
@@ -85,9 +111,22 @@ Spring @Controller annotation is also a specialization of [@Component](https://w
 RestController is used for making restful web services with the help of  the @RestController annotation. This annotation is used at the class  level and allows the class to handle the requests made by the client.  Let’s understand @RestController annotation using an example. The  RestController allows to handle all REST APIs such as GET, POST, Delete, and PUT requests. 
 
 ## B) Create a visualization of the Spring Boot layers (UML diagram or similar), displaying the key abstractions in the solution of 3.3, in particular: entities, repositories, services and REST controllers.
+
 Describe the role of the elements modeled in the diagram.
 
-FAZER AINDA
+![Diagram](https://user-images.githubusercontent.com/101096418/198854838-4fb2406b-21c0-4e52-a52f-b2177a580359.png)
+
+### Entity:
+
+Specifies that the following classes are entities and is mapped to a database table.
+
+### RestController (GreetingController):
+
+Defines a controller with ResponseBody implied on the handler methods
+
+### JpaRepository:
+
+Is a **JPA (Java Persistence API)** specific extension of Repository. It contains the full API of **CrudRepository and PagingAndSortingRepository**. 
 
 ## C) Explain the annotations @Table, @Colum, @Id found in the Employee entity.
 
