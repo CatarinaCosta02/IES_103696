@@ -1,6 +1,0 @@
-/home/catarina/Desktop/IES_103696/lab3/lab3.2/springboot2-jpa-crud-example/src/main/java/net/guides/springboot2/springboot2jpacrudexample/exception/GlobalExceptionHandler.java
-/home/catarina/Desktop/IES_103696/lab3/lab3.2/springboot2-jpa-crud-example/src/main/java/net/guides/springboot2/springboot2jpacrudexample/controller/EmployeeController.java
-/home/catarina/Desktop/IES_103696/lab3/lab3.2/springboot2-jpa-crud-example/src/main/java/net/guides/springboot2/springboot2jpacrudexample/exception/ResourceNotFoundException.java
-/home/catarina/Desktop/IES_103696/lab3/lab3.2/springboot2-jpa-crud-example/src/main/java/net/guides/springboot2/springboot2jpacrudexample/repository/EmployeeRepository.java
-/home/catarina/Desktop/IES_103696/lab3/lab3.2/springboot2-jpa-crud-example/src/main/java/net/guides/springboot2/springboot2jpacrudexample/exception/ErrorDetails.java
-/home/catarina/Desktop/IES_103696/lab3/lab3.2/springboot2-jpa-crud-example/src/main/java/net/guides/springboot2/springboot2jpacrudexample/Springboot2JpaCrudExampleApplication.java
